@@ -1,6 +1,6 @@
 # Move-figure
 ---
-![](https://github.com/user-attachments/assets/02748b8c-1468-4059-bcca-6a3683498f09)
+![](https://github.com/user-attachments/assets/1745ea4c-eb12-4c5e-a7de-5e469491cfe2)
 
 ## Information about programm
 
