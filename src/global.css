@@ -1,0 +1,64 @@
+:root {
+  --main-font-size: 16px;
+  --main-length-height: 120%;
+  --main-padding: 10px;
+  --main-margin: 5px;
+  --container-width: 100px;
+  --dark-green: rgb(2, 18, 3);
+  --white: #fff;
+  --main-blue: rgb(0, 0, 255);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: rgb(2, 18, 3);
+  color: var(--white);
+}
+
+body .header-container,
+body .footer-container {
+  display: flex;
+  justify-content: center;
+}
+
+.header-container {
+  font-size: calc(var(--main-font-size) + 8px);
+  padding: calc(var(--main-padding) + 10px) 0;
+}
+
+.main-container {
+  display: grid;
+  gap: calc(var(--main-padding) * 5);
+  justify-content: center;
+}
+
+.main-container > div {
+  width: 100%;
+}
+
+.main-container .main-content {
+  width: calc(var(--container-width) + 100px);
+  height: calc(var(--container-width) + 100px);
+  background: rgb(91, 0, 15);
+}
+
+.main-button {
+  background: var(--main-blue);
+  color: var(--white);
+  width: calc(var(--container-width) - 30px);
+  height: calc(var(--container-width) - 60px);
+  border-radius: 6px;
+}
+
+.footer-container {
+  position: fixed;
+  bottom: 0;
+  padding: calc(var(--main-padding) + 10px) 0;
+  width: 100%;
+  background: var(--main-blue);
+}
