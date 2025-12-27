@@ -9,15 +9,6 @@
   --main-blue: rgb(0, 0, 255);
 }
 
-{
-  margin: 0
-;
-  padding: 0
-;
-  box-sizing: border-box
-;
-}
-
 body {
   background-color: rgb(2, 18, 3);
   color: var(--white);
