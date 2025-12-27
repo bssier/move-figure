@@ -9,10 +9,13 @@
   --main-blue: rgb(0, 0, 255);
 }
 
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+{
+  margin: 0
+;
+  padding: 0
+;
+  box-sizing: border-box
+;
 }
 
 body {
@@ -34,11 +37,7 @@ body .footer-container {
 .main-container {
   display: grid;
   gap: calc(var(--main-padding) * 5);
-  justify-content: center;
-}
-
-.main-container > div {
-  width: 100%;
+  place-items: center;
 }
 
 .main-container .main-content {
@@ -55,10 +54,59 @@ body .footer-container {
   border-radius: 6px;
 }
 
+.main-button:disabled {
+  cursor: not-allowed;
+  border: 3px solid red;
+}
+
 .footer-container {
   position: fixed;
   bottom: 0;
   padding: calc(var(--main-padding) + 10px) 0;
   width: 100%;
   background: var(--main-blue);
+}
+
+.wrapper {
+  display: flex;
+  transform: translateX(40vw);
+}
+
+@keyframes move-triangle {
+  from {
+    transform: translateX(40vw);
+  }
+  to {
+    transform: translateX(-40vw);
+  }
+}
+
+@keyframes reverse-move-triangle {
+  from {
+    transform: translateX(-40vw);
+  }
+  to {
+    transform: translateX(40vw);
+  }
+}
+
+.reverse-move {
+  animation-name: reverse-move-triangle;
+  animation-duration: 2s;
+  animation-timing-function: linear;
+  animation-fill-mode: both;
+}
+
+.move {
+  animation-name: move-triangle;
+  animation-duration: 2s;
+  animation-timing-function: linear;
+  animation-fill-mode: both;
+}
+
+.reverse-move {
+  animation-name: reverse-move-triangle;
+  animation-duration: 1.5s;
+  animation-timing-function: linear;
+  animation-fill-mode: both;
 }
