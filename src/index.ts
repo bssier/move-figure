@@ -1,11 +1,13 @@
 import './global.css';
+import './indexOld';
+import './dnd';
 
 function moveTriangle(arg1: string, arg2: number): void {
     const mainButton: HTMLButtonElement = document.querySelector('.main-button') as HTMLButtonElement;
     const wrapper: HTMLDivElement = document.querySelector('.wrapper') as HTMLDivElement;
     const mainContentElement = document.getElementsByClassName('main-content');
     [...arguments].forEach((i) => {
-        
+        console.log(i);
 
          if (typeof i !== 'object') {
             const text = document.createElement('p');

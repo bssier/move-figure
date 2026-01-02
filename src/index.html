@@ -1,33 +1,61 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8"/>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <meta http-equiv="X-UA-Compatible" content="ie=edge"/>
-  <title>Portal</title>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta http-equiv="X-UA-Compatible" content="ie=edge"/>
+    <title>Portal</title>
 </head>
 
 <body>
 <header>
-  <div class="header-container">
-    <p class="header-texte">Moving figure app</p>
-  </div>
-</header>
-<main class="main-container">
-  <div>
-    <h2>main</h2>
-  </div>
-  <div class="wrapper">
-    <div class="main-content">
+    <div class="header-container">
+        <p class="header-texte">Moving figure app</p>
     </div>
-  </div>
-  <div>
-    <button class="main-button">move</button>
-  </div>
+</header>
+<main>
+    <section class="main-container__old">
+        <div>
+            <h2>JS анимация от Ростислава</h2>
+        </div>
+        <div class="wrapper__old">
+            <div class="main-content__old">
+            </div>
+        </div>
+        <div>
+            <button class="main-button__old">move</button>
+        </div>
+    </section>
+
+    <section class="main-container">
+        <div>
+            <h2>main</h2>
+        </div>
+        <div class="wrapper">
+            <div class="main-content">
+            </div>
+        </div>
+        <div>
+            <button class="main-button">move</button>
+        </div>
+    </section>
+
+    <section class="home-work__part-2">
+        <div id="drop-zone-1" class="drop-zone">
+            <!-- Drop target area 1 -->
+        </div>
+
+        <div id="drop-zone-2" class="drop-zone">
+            <!-- Drop target area 2 -->
+        </div>
+
+        <div id="drag-item" class="drag-item" draggable="true">
+            Drag Me!
+        </div>
+    </section>
 </main>
 <footer class="footer-container">
-  <h3>footer</h3>
+    <h3>footer</h3>
 </footer>
-<script src="./index.ts"></script>
 </body>
 </html>
