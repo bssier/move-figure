@@ -1,103 +1,178 @@
 :root {
-  --main-font-size: 16px;
-  --main-length-height: 120%;
-  --main-padding: 10px;
-  --main-margin: 5px;
-  --container-width: 100px;
-  --dark-green: rgb(2, 18, 3);
-  --white: #fff;
-  --main-blue: rgb(0, 0, 255);
+    --main-font-size: 16px;
+    --main-length-height: 120%;
+    --main-padding: 10px;
+    --main-margin: 5px;
+    --container-width: 100px;
+    --dark-green: rgb(2, 18, 3);
+    --white: #fff;
+    --main-blue: rgb(0, 0, 255);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html,
+body {
+    height: 100%;
 }
 
 body {
-  background-color: rgb(2, 18, 3);
-  color: var(--white);
+    display: flex;
+    flex-direction: column;
+}
+
+main {
+    flex: 1;
+}
+
+body {
+    background-color: rgb(2, 18, 3);
+    color: var(--white);
 }
 
 body .header-container,
 body .footer-container {
-  display: flex;
-  justify-content: center;
+    display: flex;
+    justify-content: center;
 }
 
 .header-container {
-  font-size: calc(var(--main-font-size) + 8px);
-  padding: calc(var(--main-padding) + 10px) 0;
+    font-size: calc(var(--main-font-size) + 8px);
+    padding: calc(var(--main-padding) + 10px) 0;
 }
 
-.main-container {
-  display: grid;
-  gap: calc(var(--main-padding) * 5);
-  place-items: center;
+.main-container,
+.main-container__old {
+    display: grid;
+    gap: calc(var(--main-padding) * 5);
+    place-items: center;
 }
 
-.main-container .main-content {
-  width: calc(var(--container-width) + 100px);
-  height: calc(var(--container-width) + 100px);
-  background: rgb(91, 0, 15);
+.main-container .main-content,
+.main-container__old .main-content__old {
+    width: calc(var(--container-width) + 100px);
+    height: calc(var(--container-width) + 100px);
+    background: rgb(91, 0, 15);
 }
 
-.main-button {
-  background: var(--main-blue);
-  color: var(--white);
-  width: calc(var(--container-width) - 30px);
-  height: calc(var(--container-width) - 60px);
-  border-radius: 6px;
+.main-button,
+.main-button__old {
+    background: var(--main-blue);
+    color: var(--white);
+    width: calc(var(--container-width) - 30px);
+    height: calc(var(--container-width) - 60px);
+    border-radius: 6px;
+    cursor: pointer;
+    border: 0;
 }
 
+.main-button__old:disabled,
 .main-button:disabled {
-  cursor: not-allowed;
-  border: 3px solid red;
+    cursor: not-allowed;
+    border: 3px solid red;
+}
+
+section {
+    margin-bottom: 40px;
 }
 
 .footer-container {
-  position: fixed;
-  bottom: 0;
-  padding: calc(var(--main-padding) + 10px) 0;
-  width: 100%;
-  background: var(--main-blue);
+    bottom: 0;
+    padding: calc(var(--main-padding) + 10px) 0;
+    width: 100%;
+    background: var(--main-blue);
 }
 
-.wrapper {
-  display: flex;
-  transform: translateX(40vw);
+.wrapper,
+.wrapper__old {
+    display: flex;
+    transform: translateX(40vw);
 }
 
 @keyframes move-triangle {
-  from {
-    transform: translateX(40vw);
-  }
-  to {
-    transform: translateX(-40vw);
-  }
+    from {
+        transform: translateX(40vw);
+    }
+    to {
+        transform: translateX(-40vw);
+    }
 }
 
 @keyframes reverse-move-triangle {
-  from {
-    transform: translateX(-40vw);
-  }
-  to {
-    transform: translateX(40vw);
-  }
+    from {
+        transform: translateX(-40vw);
+    }
+    to {
+        transform: translateX(40vw);
+    }
 }
 
 .reverse-move {
-  animation-name: reverse-move-triangle;
-  animation-duration: 2s;
-  animation-timing-function: linear;
-  animation-fill-mode: both;
+    animation-name: reverse-move-triangle;
+    animation-duration: 2s;
+    animation-timing-function: linear;
+    animation-fill-mode: both;
 }
 
 .move {
-  animation-name: move-triangle;
-  animation-duration: 2s;
-  animation-timing-function: linear;
-  animation-fill-mode: both;
+    animation-name: move-triangle;
+    animation-duration: 2s;
+    animation-timing-function: linear;
+    animation-fill-mode: both;
 }
 
 .reverse-move {
-  animation-name: reverse-move-triangle;
-  animation-duration: 1.5s;
-  animation-timing-function: linear;
-  animation-fill-mode: both;
+    animation-name: reverse-move-triangle;
+    animation-duration: 1.5s;
+    animation-timing-function: linear;
+    animation-fill-mode: both;
+}
+
+
+
+/*Drag*/
+.home-work__part-2 {
+    margin-top: 50px;
+}
+.drag-item {
+    padding: 10px;
+    background-color: lightblue;
+    border: 1px solid blue;
+    cursor: move;
+}
+
+/* Provides a visual cue that the item is movable */
+.drop-zone {
+    width: 150px;
+    height: 150px;
+    border: 2px dashed gray;
+    margin: 10px;
+    padding: 10px;
+    background-color: #f0f0f0;
+}
+
+/* Class added during the drag operation for visual feedback */
+.dragging {
+    opacity: 0.4;
+}
+
+/* Class added when a draggable item is over a drop zone */
+.drop-zone-hover {
+    background-color: #e0e0e0;
+    border-color: green;
+}
+
+.stop-button {
+    color: white;
+    background-color: red;
+    margin-left: 10px;
+    width: 70px;
+    height: 40px;
+    border-radius: 6px;
+    cursor: pointer;
+    border: 0;
 }

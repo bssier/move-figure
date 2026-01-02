@@ -1,4 +1,6 @@
 import './global.css';
+import './indexOld';
+import './dnd';
 
 function moveTriangle(arg1: string, arg2: number): void {
     const mainButton: HTMLButtonElement = document.querySelector('.main-button') as HTMLButtonElement;
